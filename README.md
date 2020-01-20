@@ -1,11 +1,11 @@
-# followshows -> trakt transfer
+# followshows &rarr; trakt transfer
 
 This is some basic software to transfer your show-watching history from
-followshows.com to trakt.tv.
+https://followshows.com to https://trakt.tv.
 
 ## 1. Export Followshows History
 
-On followshows.com, click on your name in the top-right and select
+On https://followshows.com, click on your name in the top-right and select
 "View Profile" (the URL is of the form https://followshows.com/user/xxxxxx).
 In the JavaScript console, run the following command to load all history:
 
@@ -25,16 +25,17 @@ document.querySelectorAll('.content').forEach((x) => console.log(x.innerText))
 
 ## 2. Create Trakt API key
 
-[Create a new app](https://trakt.tv/oauth/applications/new)
-for [Trakt.tv's API](https://trakt.docs.apiary.io/).
-Create a file `api.json` that looks like this:
+1. [Sign up with Trakt](https://trakt.tv/auth/join) if you haven't already.
+2. [Create a new app](https://trakt.tv/oauth/applications/new)
+   for [Trakt.tv's API](https://trakt.docs.apiary.io/).
+3. Create a file `api.json` that looks like this:
 
-```json
-{
-  "client_id": "xxx",
-  "client_secret": "xxx"
-}
-```
+   ```json
+   {
+     "client_id": "xxx",
+     "client_secret": "xxx"
+   }
+   ```
 
 ## 3. Run this script
 
