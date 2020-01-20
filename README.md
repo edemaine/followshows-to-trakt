@@ -13,6 +13,8 @@ In the JavaScript console, run the following command to load all history:
 setInterval(() => document.getElementById('more-contents').click(),500)
 ```
 
+Wait until the page converges,
+with a date that you joined followshows at the bottom.
 Then copy/paste the entire page into a text file `followshows.txt`.
 
 Alternatively, use the following code to output the contents to console, then
