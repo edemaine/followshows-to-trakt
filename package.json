@@ -1,0 +1,14 @@
+{
+  "name": "followshows-to-trakt",
+  "version": "1.0.0",
+  "description": "Transfer followshows.com history to trakt.tv",
+  "scripts": {
+    "convert": "coffee index.coffee"
+  },
+  "author": "Erik Demaine",
+  "license": "MIT",
+  "dependencies": {
+    "coffeescript": "^2.5.0",
+    "trakt.tv": "^7.2.0"
+  }
+}

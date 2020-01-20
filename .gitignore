@@ -1,0 +1,7 @@
+followshows*.txt
+api.json
+showmap.json
+token.json
+
+node_modules
+package-lock.json
