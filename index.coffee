@@ -66,7 +66,7 @@ parseFollowshows = ->
   year = today.year
   parsed = while match = r.exec followshows
     [follow, watch, title, season, episode, day, month] = match[1..7]
-    if month in ['seconds', 'minutes', 'hours']
+    if month in ['second', 'seconds', 'minute', 'minutes', 'hour', 'hours']
       # Relative times like "5 seconds ago" mean the same day as `today` above
       month = today.month
       day = today.day
