@@ -59,7 +59,7 @@ parseFollowshows = ->
   catch
     showmap = {}
   followshows = fs.readFileSync 'followshows.txt', encoding: 'utf8'
-  r = /You (?:followed (.*?)|watched (.*?) - (.*?) \((\d+)x(\d+)\))\.\n(\d+) (\w+)/g
+  r = /You (?:followed (.*?)|watched (.*?) - (.*?) \((\d+)x(\d+)\))\.\r?\n(\d+) (\w+)/g
   parsed = while match = r.exec followshows
     [follow, watch, title, season, episode, day, month] = match[1..7]
     month = months[month]
@@ -148,6 +148,7 @@ addWatchlist = (parsed) ->
 all = ->
   await login()
   parsed = await parseFollowshows()
+  console.log parsed
   #await removeHistory parsed
   #await addHistory parsed
   #await removeWatchlist parsed
