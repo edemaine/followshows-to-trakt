@@ -36,7 +36,10 @@ lookup = (title) ->
     else
       matches[choice].show
 
-year = 2020  # starting year
+today =  # change to date you copy/pasted your profile
+  year: 2022
+  month: 1
+  day: 19
 months =
   Jan: 0
   Feb: 1
@@ -60,10 +63,16 @@ parseFollowshows = ->
     showmap = {}
   followshows = fs.readFileSync 'followshows.txt', encoding: 'utf8'
   r = /You (?:followed (.*?)|watched (.*?) - (.*?) \((\d+)x(\d+)\))\.\r?\n(\d+) (\w+)/g
+  year = today.year
   parsed = while match = r.exec followshows
     [follow, watch, title, season, episode, day, month] = match[1..7]
-    month = months[month]
-    day = parseInt day
+    if month in ['seconds', 'minutes', 'hours']
+      # Relative times like "5 seconds ago" mean the same day as `today` above
+      month = today.month
+      day = today.day
+    else
+      month = months[month]
+      day = parseInt day
     if not month? or isNaN day
       throw new Error "month=#{month} day=#{day} in #{match[0]}"
     if watch?

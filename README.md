@@ -25,6 +25,9 @@ copy/paste the console into the text file `followshows.txt`.
 document.querySelectorAll('.content').forEach((x) => console.log(x.innerText))
 ```
 
+You should then **edit the definition of `today`** in `index.coffee`
+to specify the date that you did this copy/pasting.
+
 ## 2. Create Trakt API key
 
 1. [Sign up with Trakt](https://trakt.tv/auth/join) if you haven't already.
@@ -44,7 +47,7 @@ document.querySelectorAll('.content').forEach((x) => console.log(x.innerText))
 1. `npm install`
 2. `npm run convert` (equivalent to `coffee index.coffee`)
 
-In the first run, you will need to authenticate as instructured.
+In the first run, you will need to authenticate as instructed.
 After authenticating once, `token.json` will store a longer-lived token;
 delete that file if it expires.
 
@@ -55,7 +58,7 @@ your answers to show identification will get saved in `showmap.json`;
 remove an entry from there if you want to get asked again about that show.
 
 The code will not do any synchronizing by default.  To do so, you need to
-uncomment the final few lines of index.coffee:
+uncomment the final few lines of `index.coffee`:
 
 ```coffee
   #await removeHistory parsed
